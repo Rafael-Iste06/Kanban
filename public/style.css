@@ -1,0 +1,94 @@
+/* style.css - simple modern kanban */
+:root{
+  --bg:#fff8f0;
+  --accent:#7a5c42;
+  --muted:#8c8c8c;
+}
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,system-ui,Arial; margin:0; background:var(--bg); color:#222; height:100vh; display:flex;}
+#app{display:flex; width:100%; height:100vh;}
+aside#sidebar{width:300px; background:#fff; border-right:1px solid #eee; padding:16px; display:flex; flex-direction:column; gap:12px;}
+.brand{display:flex; align-items:center; justify-content:space-between;}
+.brand h1{margin:0; color:var(--accent)}
+.brand button{font-size:18px; padding:6px 8px; border-radius:8px; cursor:pointer; background:var(--accent); color:#fff; border:none}
+.boards-list{overflow:auto; flex:1}
+.board-item{padding:8px 10px; border-radius:8px; margin-bottom:8px; cursor:pointer; display:flex; justify-content:space-between; align-items:center}
+.board-item.active{background:#fff2e6; box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.sidebar-controls input{width:100%; padding:8px; border-radius:8px; border:1px solid #ddd; margin-bottom:8px}
+.sidebar-buttons button{margin-right:6px; padding:6px 8px; border-radius:6px; cursor:pointer; border:1px solid #ddd; background:white}
+#save-status{display:block; margin-top:6px; color:var(--muted); font-size:12px}
+
+main#board-area{flex:1; display:flex; flex-direction:column; padding:12px; overflow:auto}
+#board-header{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px}
+.columns{display:flex; gap:12px; align-items:flex-start; overflow:auto; padding-bottom:20px}
+.column{background:#fffaf3; padding:10px; border-radius:12px; min-width:320px; box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+.column h3{margin:0 0 8px 0}
+.column .col-controls{display:flex; gap:6px; margin-bottom:8px}
+.tasks{display:flex; flex-direction:column; gap:8px}
+.task{background:white; padding:10px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.04); cursor:grab}
+.task .meta{font-size:12px; color:var(--muted); margin-top:6px}
+.add-col, .add-task{display:block; width:100%; padding:8px; border-radius:8px; border:none; background:#fff; cursor:pointer; text-align:left}
+.small{font-size:12px; color:var(--muted)}
+
+.modal{position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.35)}
+.modal.hidden{display:none}
+.modal-inner{background:white; width:720px; max-height:80vh; overflow:auto; padding:18px; border-radius:10px; position:relative}
+.close-modal{position:absolute; right:10px; top:10px; background:transparent; border:none; font-size:18px; cursor:pointer}
+.modal-inner input, .modal-inner textarea{width:100%; padding:8px; margin:6px 0; border-radius:6px; border:1px solid #ddd}
+.modal-actions{display:flex; gap:8px; justify-content:flex-end; margin-top:12px}
+.modal-actions button{padding:8px 10px; border-radius:6px; cursor:pointer; border:none}
+.modal-actions #delete-task{background:#ffdede; color:#900}
+.modal-actions #archive-task{background:#fff2e6; color:var(--accent)}
+.modal-actions #save-task{background:var(--accent); color:white}
+
+@media (max-width:900px){
+  aside#sidebar{display:none}
+  .columns{flex-wrap:nowrap; overflow-x:auto}
+  .column{min-width:280px}
+}
+
+
+/* Commentaires en bulles */
+#comments {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+#comments li {
+  background: #fff2e6;
+  padding: 6px 10px;
+  border-radius: 12px;
+  margin-bottom: 6px;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#comments li .comment-text {
+  flex: 1;
+  margin-right: 8px;
+}
+
+#comments li .comment-time {
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.column .add-task {
+  margin-bottom: 8px; /* espace entre le bouton et la liste des tâches */
+}
+
+
+.insert-line {
+  height: 4px;
+  background: rgba(122, 92, 66, 0.6); /* marron clair semi-transparent */
+  border-radius: 2px;
+  margin: 4px 0;
+  transition: all 0.15s ease;
+}

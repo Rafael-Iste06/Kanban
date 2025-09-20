@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kanban • Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <header class="brand">
+        <h1>Kanban</h1>
+        <button id="new-board-btn" title="New board">＋</button>
+      </header>
 
+      <div class="boards-list" id="boards-list"></div>
+
+      <div class="sidebar-controls">
+        <input id="search-input" placeholder="Search task..." />
+        <div class="sidebar-buttons">
+          <button id="export-btn">Export JSON</button>
+          <input id="import-file" type="file" accept="application/json" style="display:none" />
+          <button id="import-btn">Import</button>
+          <button id="save-btn">Save</button>
+        </div>
+        <small id="save-status"></small>
+      </div>
+    </aside>
+
+    <main id="board-area">
+      <header id="board-header">
+        <h2 id="board-title">Loading...</h2>
+        <div class="board-actions">
+          <select id="filter-labels"><option value="">Filter label</option></select>
+        </div>
+      </header>
+
+      <section id="columns-container" class="columns"></section>
+    </main>
+  </div>
+
+  <!-- Task modal -->
+  <div id="task-modal" class="modal hidden">
+    <div class="modal-inner">
+      <button class="close-modal" id="close-modal">✕</button>
+      <h3 id="modal-title">Task</h3>
+      <input id="task-title" placeholder="Title" />
+      <textarea id="task-desc" placeholder="Description"></textarea>
+
+      <div class="row">
+        <input id="task-due" type="date" />
+        <input id="task-labels" placeholder="Labels (separated by ,)" />
+      </div>
+
+      <div>
+        <h4>Comments</h4>
+        <ul id="comments"></ul>
+        <input id="comment-add" placeholder="Add comment" />
+        <button id="add-comment">Add</button>
+      </div>
+
+      <div class="modal-actions">
+        <button id="delete-task">Delete</button>
+        <button id="advance-task-btn">Next step</button>
+        <button id="save-task">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
