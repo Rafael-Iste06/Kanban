@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "title": "Mon Kanban",
+    "updatedAt": "2025-09-19T13:15:59.888Z"
+  },
+  "boards": [
+    {
+      "id": "board-ot78lam",
+      "title": "a",
+      "columns": [
+        {
+          "id": "col-d9xbg1u",
+          "title": "TODO",
+          "tasks": [
+            {
+              "id": "t-x5b821l",
+              "title": "New Task 1",
+              "description": "",
+              "labels": [],
+              "dueDate": null,
+              "comments": []
+            },
+            {
+              "id": "t-v7bt9xs",
+              "title": "New Task 2",
+              "description": "",
+              "labels": [],
+              "dueDate": null,
+              "comments": []
+            },
+            {
+              "id": "t-lez6azg",
+              "title": "New Task 3",
+              "description": "",
+              "labels": [],
+              "dueDate": null,
+              "comments": []
+            }
+          ]
+        },
+        {
+          "id": "col-k2zyswf",
+          "title": "WIP",
+          "tasks": [
+            {
+              "id": "t-863y2ra",
+              "title": "New Task",
+              "description": "",
+              "labels": [],
+              "dueDate": null,
+              "comments": []
+            },
+            {
+              "id": "t-jajynut",
+              "title": "New Task c",
+              "description": "",
+              "labels": [],
+              "dueDate": null,
+              "comments": []
+            }
+          ]
+        },
+        {
+          "id": "col-x4f00ku",
+          "title": "ON CHECK",
+          "tasks": []
+        },
+        {
+          "id": "col-qzo9siw",
+          "title": "DONE",
+          "tasks": []
+        }
+      ]
+    }
+  ],
+  "ui": {
+    "openBoardId": "board-ot78lam"
+  }
+}
